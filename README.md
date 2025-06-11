@@ -42,12 +42,8 @@ Coming soon (host on GitHub Pages or Vercel)
 **Tanay Bateriwala**  
 [GitHub](https://github.com/Tanay09876)
 
-## 📜 License
 
-This project is open source and available under the [MIT License](LICENSE).
-```
 
----
 
 ### ✅ How to use:
 
