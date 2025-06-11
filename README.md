@@ -35,7 +35,8 @@ Coming soon (host on GitHub Pages or Vercel)
 
 ## 📷 Screenshots
 
-*Add screenshots here if available*
+![image](https://github.com/user-attachments/assets/e4c95321-c195-47c2-acdc-e35f955173c4)
+
 
 ## 🙌 Author
 
