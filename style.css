@@ -258,3 +258,60 @@ body {
     max-width: 200px;
   }
 }
+/* Additions to your existing CSS */
+@media (max-width: 992px) {
+  .spreadsheet {
+    grid-template-columns: 40px repeat(8, 100px); /* Reduce columns */
+    overflow-x: auto;
+  }
+
+  .toolbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .toolbar select,
+  .toolbar button,
+  .toolbar input[type="file"],
+  .toolbar input[type="color"] {
+    flex: 1 1 45%;  /* Take half width on small screens */
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  .toolbar-icon-button {
+    font-size: 18px;
+    padding: 5px 8px;
+  }
+
+  .new-sheet-btn {
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto;
+    display: block;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .spreadsheet {
+    grid-template-columns: 40px repeat(5, 100px); /* Even fewer columns on extra small screens */
+  }
+
+  .toolbar select,
+  .toolbar button,
+  .toolbar input[type="file"],
+  .toolbar input[type="color"] {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+.spreadsheet-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+
