@@ -254,8 +254,9 @@ body {
   .toolbar button,
   .toolbar input[type="file"],
   .toolbar input[type="color"] {
-    width: 100%;
-    max-width: 200px;
+    width: 70%;
+    max-width: 100px;
+      
   }
 }
 /* Additions to your existing CSS */
