@@ -1,104 +1,3 @@
-/* body{
-    margin: 0px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #F4F7F9;
-
-}
-.toolbar{
-    background-color: #2e8b8b;
-    padding: 10px;
-    align-items: center;
-    gap: 10px;
-    color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-
-.toolbar select,.toolbar button, .toolbar input[type="file"],.toolbar input[type="color"]{
-    padding: 6px 10px;
-    border: #2e8b8b;
-    font-weight: bold;
-    border-radius: 4px;
-
-}
-
-.toolbar button:hover{
-    background-color: #ddd;
-}
-
-.toolbar-icon-button{
-    background-color: white;
-    color: #2e8b8b;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-}
-
-.toolbar-icon-button:hover{
-    background-color: #ddd;
- 
-}
-
-.spreadsheet  {
- display: grid;
- grid-template-columns: 40px repeat(20, 100px);
- margin: 10px;
- background: white;
- border-radius: 8px;
- overflow: auto;
- box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.cell ,.header{
- border: 1px solid #ccc;
- padding: 6px;
- box-sizing: border-box;
- min-height: 24px;
-}
-.header{
-    background: #edf2f7;
-    font-weight: Bold;
-    text-align: center;
-    color:black;
-}
-
-
-.cell[contenteditable]{
-    padding: 5px;
-    border: 1px solid #ccc;
-    outline: none;
-    color: black;
-}
-
-.row-header{
-    grid-column: 1;
-    background: #edf2f7;
-    text-align: center;
-    font-weight: bold;
-    color: black;
-}
-
-
-.sheet-container{
-    padding: 10px;
-}
-
-.new-sheet-btn{
-    color: #2e8b8b;
-     background-color: white;
-    border: none;
-    font-weight: bold;
-    border-radius: 4px;
-    border: 2px solid #2e8b8b;
-}
-
-.new-sheet-btn:hover{
-    background-color:#2e8b8b;
-    color: white;
-} */
-
-
 :root {
   --main-color: #2e8b8b;
   --light-bg: #F4F7F9;
@@ -117,7 +16,7 @@ body {
   color: var(--font-color);
 }
 
-/* Toolbar */
+/* ===== Toolbar ===== */
 .toolbar {
   background-color: var(--main-color);
   padding: 10px 20px;
@@ -127,6 +26,7 @@ body {
   color: var(--white);
   box-shadow: var(--shadow);
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .toolbar select,
@@ -136,9 +36,11 @@ body {
   padding: 6px 12px;
   border: 1px solid var(--main-color);
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   border-radius: 5px;
   transition: all 0.3s ease;
+  background-color: var(--white);
+  color: var(--main-color);
 }
 
 .toolbar select:focus,
@@ -158,7 +60,7 @@ body {
 .toolbar-icon-button {
   background-color: var(--white);
   color: var(--main-color);
-  font-size: 20px;
+  font-size: 18px;
   border: none;
   cursor: pointer;
   padding: 6px 10px;
@@ -170,7 +72,7 @@ body {
   background-color: var(--hover-bg);
 }
 
-/* Spreadsheet Grid */
+/* ===== Spreadsheet Grid ===== */
 .spreadsheet {
   display: grid;
   grid-template-columns: 40px repeat(20, 100px);
@@ -181,7 +83,7 @@ body {
   box-shadow: var(--shadow);
 }
 
-/* Cell and Header Styling */
+/* ===== Cell and Header Styling ===== */
 .cell,
 .header {
   border: 1px solid var(--border-color);
@@ -193,7 +95,7 @@ body {
 
 .cell[contenteditable] {
   outline: none;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .cell[contenteditable]:hover,
@@ -202,27 +104,20 @@ body {
   border-color: var(--main-color);
 }
 
-.header {
-  background: var(--header-bg);
-  font-weight: bold;
-  text-align: center;
-  color: var(--font-color);
-}
-
+.header,
 .row-header {
-  grid-column: 1;
   background: var(--header-bg);
-  text-align: center;
   font-weight: bold;
+  text-align: center;
   color: var(--font-color);
 }
 
-/* Sheet Container */
+/* ===== Sheet Container ===== */
 .sheet-container {
   padding: 0px;
 }
 
-/* New Sheet Button */
+/* ===== New Sheet Button ===== */
 .new-sheet-btn {
   color: var(--main-color);
   background-color: var(--white);
@@ -239,15 +134,16 @@ body {
   cursor: pointer;
 }
 
-/* Responsive Grid (Optional Enhancement) */
+/* ===== Responsive Design ===== */
 @media (max-width: 768px) {
   .spreadsheet {
     grid-template-columns: 40px repeat(10, 100px);
-    overflow-x: auto;
+    overflow-x: scroll;
   }
 
   .toolbar {
-    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .toolbar select,
@@ -255,6 +151,18 @@ body {
   .toolbar input[type="file"],
   .toolbar input[type="color"] {
     width: 100%;
-    max-width: 200px;
+    max-width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .toolbar-icon-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .spreadsheet {
+    grid-template-columns: 40px repeat(5, 100px);
   }
 }
